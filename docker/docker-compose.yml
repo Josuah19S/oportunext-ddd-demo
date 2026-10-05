@@ -1,0 +1,11 @@
+services:
+  volunteering-service:
+    build: ../backend/volunteering-service
+    container_name: volunteering-service
+    ports: ["8001:8000"]
+    restart: unless-stopped
+  scholarship-service:
+    build: ../backend/scholarship-service
+    container_name: scholarship-service
+    ports: ["8002:8000"]
+    restart: unless-stopped

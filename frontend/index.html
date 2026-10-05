@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oportunext</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <h1>Oportunext</h1>
+        <p class="subtitle">Voluntariados y becas para peruanos</p>
+      </div>
+      <button type="button" id="reload-button" class="button">Recargar</button>
+    </header>
+
+    <p id="config-warning" class="message" role="alert" hidden></p>
+
+    <div class="tabs" role="tablist" aria-label="Tipo de oportunidad">
+      <button type="button" class="tab" role="tab" id="tab-volunteering"
+              aria-selected="true" aria-controls="panel-volunteering">Voluntariados</button>
+      <button type="button" class="tab" role="tab" id="tab-scholarships"
+              aria-selected="false" aria-controls="panel-scholarships" tabindex="-1">Becas</button>
+    </div>
+
+    <section class="panel" role="tabpanel" id="panel-volunteering" aria-labelledby="tab-volunteering">
+      <p class="status"></p>
+      <p class="message" role="alert"></p>
+      <div class="cards"></div>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-scholarships" aria-labelledby="tab-scholarships" hidden>
+      <p class="status"></p>
+      <p class="message" role="alert"></p>
+      <div class="cards"></div>
+    </section>
+  </div>
+
+  <dialog id="detail-dialog" aria-labelledby="detail-title">
+    <h2 id="detail-title"></h2>
+    <p class="status"></p>
+    <p class="message" role="alert"></p>
+    <dl class="detail-fields"></dl>
+    <form method="dialog">
+      <button type="submit" class="button">Cerrar</button>
+    </form>
+  </dialog>
+</body>
+</html>
